@@ -1,6 +1,5 @@
 package orelang;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,12 +38,9 @@ public class Engine {
 	private IExpression getExpression(Object script){
 		if (script instanceof List){
 			List<?> scriptList = (List<?>)script;
-			IOperator operator = operators.get(scriptList.get(0));
-			List<IExpression> args = new ArrayList<IExpression>();
-			for(int i = 1;i < scriptList.size();i++){
-				args.add(getExpression(scriptList.get(i)));
-			}
-			return new CallOperator(operator, args);
+			return new CallOperator(
+					operators.get(scriptList.get(0)), 
+					scriptList.subList(1, scriptList.size()));
 		}else{
 			return new ImmediateValue(script);
 		}

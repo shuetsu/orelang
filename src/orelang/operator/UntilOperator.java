@@ -3,14 +3,13 @@ package orelang.operator;
 import java.util.List;
 
 import orelang.Engine;
-import orelang.expression.IExpression;
 
 public class UntilOperator implements IOperator {
 	@Override
-	public Object call(Engine engine, List<IExpression> args) {
+	public Object call(Engine engine, List<?> args) {
 		Object retVal = null;
-		while(!(boolean)args.get(0).eval(engine)){
-			retVal = args.get(1).eval(engine);
+		while(!(boolean)engine.eval(args.get(0))){
+			retVal = engine.eval(args.get(1));
 		}
 		return retVal;
 	}

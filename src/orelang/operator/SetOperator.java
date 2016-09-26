@@ -3,13 +3,12 @@ package orelang.operator;
 import java.util.List;
 
 import orelang.Engine;
-import orelang.expression.IExpression;
 
 public class SetOperator implements IOperator {
 	@Override
-	public Object call(Engine engine, List<IExpression> args) {
-		Object value = args.get(1).eval(engine);
-		engine.variables.put((String)args.get(0).eval(engine), value);
+	public Object call(Engine engine, List<?> args) {
+		Object value = engine.eval(args.get(1));
+		engine.variables.put((String)engine.eval(args.get(0)), value);
 		return value;
 	}
 }
