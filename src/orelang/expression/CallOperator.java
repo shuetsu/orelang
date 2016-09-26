@@ -2,7 +2,7 @@ package orelang.expression;
 
 import java.util.List;
 
-import orelang.Evaluator;
+import orelang.Engine;
 import orelang.operator.IOperator;
 
 public class CallOperator implements IExpression {
@@ -16,8 +16,8 @@ public class CallOperator implements IExpression {
 	}
 	
 	@Override
-	public Object eval(Evaluator evaluator) {
-		return operator.call(evaluator, args);
+	public Object eval(Engine engine) {
+		return operator.call(engine, args);
 	}
 
 }

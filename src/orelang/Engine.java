@@ -17,12 +17,12 @@ import orelang.operator.SetOperator;
 import orelang.operator.StepOperator;
 import orelang.operator.UntilOperator;
 
-public class Evaluator {
+public class Engine {
 
 	public Map<String, IOperator> operators = new HashMap<String, IOperator>();
 	public Map<String, Object> variables = new HashMap<String, Object>();
 	
-	public Evaluator(){
+	public Engine(){
 		operators.put("+", new AddOperator());
 		operators.put("*", new MultiplyOperator());
 		operators.put("=", new EqualOperator());

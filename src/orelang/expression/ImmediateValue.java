@@ -1,6 +1,6 @@
 package orelang.expression;
 
-import orelang.Evaluator;
+import orelang.Engine;
 
 public class ImmediateValue implements IExpression {
 
@@ -11,7 +11,7 @@ public class ImmediateValue implements IExpression {
 	}
 	
 	@Override
-	public Object eval(Evaluator evaluator) {
+	public Object eval(Engine engine) {
 		return value;
 	}
 

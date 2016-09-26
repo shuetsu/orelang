@@ -1,7 +1,7 @@
 package orelang.expression;
 
-import orelang.Evaluator;
+import orelang.Engine;
 
 public interface IExpression {
-	Object eval(Evaluator evaluator);
+	Object eval(Engine engine);
 }
