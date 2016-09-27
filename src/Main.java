@@ -10,13 +10,13 @@ public class Main {
 	public static void main(String[] args) throws JSONException, IOException {
 		{
 			Engine engine = new Engine();
-			Object v = engine.eval(JSON.decode(new FileReader("example1.json")));
-			System.out.println(v);
+			Object result = engine.eval(JSON.decode("[\"+\", 1, 2, [\"*\", 3, 4]]"));
+			System.out.println(result);
 		}
 		{
 			Engine engine = new Engine();
-			Object v = engine.eval(JSON.decode(new FileReader("example2.json")));
-			System.out.println(v);
+			Object result = engine.eval(JSON.decode(new FileReader("example.json")));
+			System.out.println(result);
 		}
 	}
 
