@@ -16,22 +16,27 @@ public class Main {
 		{
 			System.out.println("example: 1から10までの和");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_sum1to10.json")));
+			engine.eval(Transpiler.transpile(new FileReader("example_sum1to10.orelang")));
 		}
 		{
 			System.out.println("example: オペレータの動的ディスパッチ");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_dynamic_op.json")));
+			engine.eval(Transpiler.transpile(new FileReader("example_dynamic_op.orelang")));
 		}
 		{
 			System.out.println("example: 手続きの定義(lambdaオペレータ)");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_lambda.json")));
+			engine.eval(Transpiler.transpile(new FileReader("example_lambda.orelang")));
 		}
 		{
 			System.out.println("example: ローカル変数");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_local_var.json")));
+			engine.eval(Transpiler.transpile(new FileReader("example_local_var.orelang")));
+		}
+		{
+			System.out.println("example: 引数を持つ手続きの定義");
+			Engine engine = new Engine();
+			engine.eval(Transpiler.transpile(new FileReader("example_arg.orelang")));
 		}
 	}
 
