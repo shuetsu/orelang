@@ -4,10 +4,10 @@ import java.util.List;
 
 import orelang.Engine;
 
-public class SetOperator implements IOperator {
+public class DefineOperator implements IOperator {
 	@Override
 	public Object call(Engine engine, List<?> args) {
-		return engine.setVariable(
+		return engine.defineVariable(
 				(String)engine.eval(args.get(0)), 
 				engine.eval(args.get(1)));
 	}

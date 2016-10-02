@@ -6,5 +6,4 @@
     ["set", "sum", ["+", ["get", "sum"], ["get", "i"]]],
     ["set", "i", ["+", ["get", "i"], -1]]
   ]],
-  ["get", "sum"]
-]
+  ["print", ["get", "sum"]]]

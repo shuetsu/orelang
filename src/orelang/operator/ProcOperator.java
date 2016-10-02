@@ -14,7 +14,7 @@ public class ProcOperator implements IOperator {
 	
 	@Override
 	public Object call(Engine engine, List<?> args) {
-		return engine.eval(procedure);
+		return new Engine(engine).eval(procedure);
 	}
 
 }

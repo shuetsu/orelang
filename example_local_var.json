@@ -1,0 +1,7 @@
+["step",
+  ["def", "v", 1],
+  [["lambda",
+     ["step",
+       ["def", "v", 2],
+       ["print", ["get", "v"]]]]],
+  ["print", ["get", "v"]]]
