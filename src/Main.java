@@ -43,6 +43,11 @@ public class Main {
 			Engine engine = new Engine();
 			engine.eval(Transpiler.transpile(new FileReader("example_closure.orelang")));
 		}
+		{
+			System.out.println("example: クラス（のようなもの）の定義");
+			Engine engine = new Engine();
+			engine.eval(Transpiler.transpile(new FileReader("example_class.orelang")));
+		}
 	}
 
 }

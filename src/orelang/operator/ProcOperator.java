@@ -8,17 +8,15 @@ public class ProcOperator implements IOperator {
 
 	private List<?> argNames;
 	private Object procedure;
-	private Engine engine;
 	
-	public ProcOperator(List<?> argNames, Object procedure, Engine engine){
+	public ProcOperator(List<?> argNames, Object procedure){
 		this.argNames = argNames;
 		this.procedure = procedure;
-		this.engine = engine;
 	}
 	
 	@Override
 	public Object call(Engine engine, List<?> args) {
-		Engine _engine = new Engine(this.engine);
+		Engine _engine = new Engine(engine);
 		for(int i = 0;i < this.argNames.size();i++){
 			_engine.variables.put(
 					(String)this.argNames.get(i), engine.eval(args.get(i))); 

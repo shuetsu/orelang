@@ -11,6 +11,8 @@ import orelang.expression.SymbolValue;
 import orelang.operator.AddOperator;
 import orelang.operator.DefineOperator;
 import orelang.operator.EqualOperator;
+import orelang.operator.GetOperator;
+import orelang.operator.IOperator;
 import orelang.operator.LambdaOperator;
 import orelang.operator.MultiplyOperator;
 import orelang.operator.PrintOperator;
@@ -30,6 +32,7 @@ public class Engine {
 		variables.put("=", new EqualOperator());
 		variables.put("def", new DefineOperator());
 		variables.put("set", new SetOperator());
+		variables.put("get", new GetOperator());
 		variables.put("until", new UntilOperator());
 		variables.put("step", new StepOperator());
 		variables.put("lambda", new LambdaOperator());
@@ -41,7 +44,12 @@ public class Engine {
 	}
 	
 	public Object eval(Object script){
-		return getExpression(script).eval(this);
+		Object retVal = getExpression(script).eval(this);
+		if (retVal instanceof IOperator){
+			return new Closure(this, (IOperator)retVal);
+		}else{
+			return retVal;
+		}
 	}
 	
 	private IExpression getExpression(Object script){

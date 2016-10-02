@@ -2,8 +2,8 @@ package orelang.expression;
 
 import java.util.List;
 
+import orelang.Closure;
 import orelang.Engine;
-import orelang.operator.IOperator;
 
 public class CallOperator implements IExpression {
 
@@ -17,8 +17,8 @@ public class CallOperator implements IExpression {
 	
 	@Override
 	public Object eval(Engine engine) {
-		IOperator op = (IOperator)engine.eval(operator);
-		return op.call(engine, args);
+		Closure closure = (Closure)engine.eval(operator);
+		return closure.eval(args);
 	}
 
 }
