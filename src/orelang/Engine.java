@@ -39,7 +39,7 @@ public class Engine {
 		if (script instanceof List){
 			List<?> scriptList = (List<?>)script;
 			return new CallOperator(
-					operators.get(scriptList.get(0)), 
+					scriptList.get(0), 
 					scriptList.subList(1, scriptList.size()));
 		}else{
 			return new ImmediateValue(script);

@@ -15,7 +15,12 @@ public class Main {
 		}
 		{
 			Engine engine = new Engine();
-			Object result = engine.eval(JSON.decode(new FileReader("example.json")));
+			Object result = engine.eval(JSON.decode(new FileReader("example_sum1to10.json")));
+			System.out.println(result);
+		}
+		{
+			Engine engine = new Engine();
+			Object result = engine.eval(JSON.decode(new FileReader("example_dynamic_op.json")));
 			System.out.println(result);
 		}
 	}

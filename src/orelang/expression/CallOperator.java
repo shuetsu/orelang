@@ -3,21 +3,24 @@ package orelang.expression;
 import java.util.List;
 
 import orelang.Engine;
-import orelang.operator.IOperator;
 
 public class CallOperator implements IExpression {
 
-	private IOperator operator;
+	private Object operator;
 	private List<?> args;
 	
-	public CallOperator(IOperator operator, List<?> args){
+	public CallOperator(Object operator, List<?> args){
 		this.operator = operator;
 		this.args = args;
 	}
 	
 	@Override
 	public Object eval(Engine engine) {
-		return operator.call(engine, args);
+		Object op = engine.eval(operator);
+		if (engine.operators.containsKey(op)){
+			return engine.operators.get(op).call(engine, args);
+		}
+		throw new RuntimeException("Unknown operator: " + op.toString());
 	}
 
 }
