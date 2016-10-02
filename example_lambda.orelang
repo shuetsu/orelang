@@ -1,5 +1,5 @@
 (step
   (set square_a
-    (lambda (* (get a) (get a))))
+    (lambda (* a a)))
   (set a 5)
   (print (square_a)))

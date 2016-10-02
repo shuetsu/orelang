@@ -3,7 +3,7 @@
     ((lambda
        (step
          (def c 0)
-         (lambda (set c (+ (get c) 1)))))))
+         (lambda (set c (+ c 1)))))))
   (print (counter))
   (print (counter))
   (print (counter))

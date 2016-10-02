@@ -3,5 +3,5 @@
   ((lambda
      (step
        (def v 2)
-       (print (get v)))))
-  (print (get v)))
+       (print v))))
+  (print v))

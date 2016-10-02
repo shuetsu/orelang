@@ -17,14 +17,8 @@ public class CallOperator implements IExpression {
 	
 	@Override
 	public Object eval(Engine engine) {
-		return getOperator(engine, engine.eval(operator)).call(engine, args);
+		IOperator op = (IOperator)engine.eval(operator);
+		return op.call(engine, args);
 	}
 
-	private IOperator getOperator(Engine engine, Object op){
-		if (op instanceof IOperator){
-			return (IOperator)op;
-		}else{
-			return (IOperator)engine.getVariable((String)op);
-		}
-	}
 }

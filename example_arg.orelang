@@ -1,4 +1,4 @@
 (step
   (def square
-    (lambda v (* (get v) (get v))))
+    (lambda v (* v v)))
   (print (square 5)))

@@ -16,7 +16,7 @@ public class Main {
 		{
 			System.out.println("example: 1から10までの和");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_sum1to10.orelang")));
+			engine.eval(Transpiler.transpile(new FileReader("example_sum.orelang")));
 		}
 		{
 			System.out.println("example: オペレータの動的ディスパッチ");
