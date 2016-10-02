@@ -11,6 +11,7 @@ import orelang.operator.AddOperator;
 import orelang.operator.EqualOperator;
 import orelang.operator.GetOperator;
 import orelang.operator.IOperator;
+import orelang.operator.LambdaOperator;
 import orelang.operator.MultiplyOperator;
 import orelang.operator.SetOperator;
 import orelang.operator.StepOperator;
@@ -29,6 +30,7 @@ public class Engine {
 		operators.put("get", new GetOperator());
 		operators.put("until", new UntilOperator());
 		operators.put("step", new StepOperator());
+		operators.put("lambda", new LambdaOperator());
 	}
 	
 	public Object eval(Object script){

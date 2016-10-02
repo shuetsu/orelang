@@ -23,6 +23,11 @@ public class Main {
 			Object result = engine.eval(JSON.decode(new FileReader("example_dynamic_op.json")));
 			System.out.println(result);
 		}
+		{
+			Engine engine = new Engine();
+			Object result = engine.eval(JSON.decode(new FileReader("example_lambda.json")));
+			System.out.println(result);
+		}
 	}
 
 }

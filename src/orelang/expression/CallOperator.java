@@ -3,6 +3,7 @@ package orelang.expression;
 import java.util.List;
 
 import orelang.Engine;
+import orelang.operator.IOperator;
 
 public class CallOperator implements IExpression {
 
@@ -16,11 +17,15 @@ public class CallOperator implements IExpression {
 	
 	@Override
 	public Object eval(Engine engine) {
-		Object op = engine.eval(operator);
-		if (engine.operators.containsKey(op)){
-			return engine.operators.get(op).call(engine, args);
+		return getOperator(engine, engine.eval(operator)).call(engine, args);
+	}
+
+	private IOperator getOperator(Engine engine, Object op){
+		if (op instanceof IOperator){
+			return (IOperator)op;
+		}else if (engine.operators.containsKey(op)){
+			return engine.operators.get(op);
 		}
 		throw new RuntimeException("Unknown operator: " + op.toString());
 	}
-
 }
