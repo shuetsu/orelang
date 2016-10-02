@@ -1,0 +1,25 @@
+(step
+ 
+ (def PI 3.14159)
+ 
+ (def get_circle 
+   (lambda radius (step
+     (def get_radius 
+       (lambda radius))
+     (def set_radius
+       (lambda r (set radius r)))
+     (def circumference
+       (lambda (* 2 PI radius)))
+     (def area
+       (lambda (* PI radius radius)))
+     get)))
+ 
+ (def c (get_circle 5))
+ (print ((c get_radius)))
+ (print ((c circumference)))
+ (print ((c area)))
+ 
+ ((c set_radius) 10)
+ (print ((c get_radius)))
+ (print ((c circumference)))
+ (print ((c area))))
