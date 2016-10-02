@@ -23,8 +23,8 @@ public class Transpiler {
 
 	public static Object transpile(String script){
 		String s = script;
-		s = s.replaceAll("\\(", "["); // ( -> [
-		s = s.replaceAll("\\)", "]"); // ( -> ]
+		s = s.replaceAll("\\(\\s*", "["); // ( -> [
+		s = s.replaceAll("\\s*\\)", "]"); // ( -> ]
 		s = s.replaceAll(";.*", ""); // remove comments
 		s = s.replaceAll("\n", ""); // remove line return
 		s = s.replaceAll("\\s+", ", "); // spaces -> ,
