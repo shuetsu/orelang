@@ -14,6 +14,7 @@ import orelang.operator.EqualOperator;
 import orelang.operator.GetOperator;
 import orelang.operator.IOperator;
 import orelang.operator.LambdaOperator;
+import orelang.operator.LoadOperator;
 import orelang.operator.MultiplyOperator;
 import orelang.operator.PrintOperator;
 import orelang.operator.SetOperator;
@@ -37,6 +38,7 @@ public class Engine {
 		variables.put("step", new StepOperator());
 		variables.put("lambda", new LambdaOperator());
 		variables.put("print", new PrintOperator());
+		variables.put("load", new LoadOperator());
 	}
 	
 	public Engine(Engine _super){

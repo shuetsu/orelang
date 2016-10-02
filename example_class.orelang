@@ -2,7 +2,7 @@
  
  (def PI 3.14159)
  
- (def get_circle 
+ (def create_circle 
    (lambda radius (step
      (def get_radius 
        (lambda radius))
@@ -14,7 +14,7 @@
        (lambda (* PI radius radius)))
      get)))
  
- (def c (get_circle 5))
+ (def c (create_circle 5))
  (print ((c get_radius)))
  (print ((c circumference)))
  (print ((c area)))
