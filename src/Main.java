@@ -38,6 +38,11 @@ public class Main {
 			Engine engine = new Engine();
 			engine.eval(Transpiler.transpile(new FileReader("example_arg.orelang")));
 		}
+		{
+			System.out.println("example: クロージャ");
+			Engine engine = new Engine();
+			engine.eval(Transpiler.transpile(new FileReader("example_closure.orelang")));
+		}
 	}
 
 }

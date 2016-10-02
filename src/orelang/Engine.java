@@ -11,7 +11,6 @@ import orelang.operator.AddOperator;
 import orelang.operator.DefineOperator;
 import orelang.operator.EqualOperator;
 import orelang.operator.GetOperator;
-import orelang.operator.IOperator;
 import orelang.operator.LambdaOperator;
 import orelang.operator.MultiplyOperator;
 import orelang.operator.PrintOperator;
@@ -21,28 +20,25 @@ import orelang.operator.UntilOperator;
 
 public class Engine {
 
-	public Map<String, IOperator> operators;
 	public Map<String, Object> variables = new HashMap<String, Object>();
 	
 	private Engine _super = null;
 	
 	public Engine(){
-		operators = new HashMap<String, IOperator>();
-		operators.put("+", new AddOperator());
-		operators.put("*", new MultiplyOperator());
-		operators.put("=", new EqualOperator());
-		operators.put("def", new DefineOperator());
-		operators.put("set", new SetOperator());
-		operators.put("get", new GetOperator());
-		operators.put("until", new UntilOperator());
-		operators.put("step", new StepOperator());
-		operators.put("lambda", new LambdaOperator());
-		operators.put("print", new PrintOperator());
+		variables.put("+", new AddOperator());
+		variables.put("*", new MultiplyOperator());
+		variables.put("=", new EqualOperator());
+		variables.put("def", new DefineOperator());
+		variables.put("set", new SetOperator());
+		variables.put("get", new GetOperator());
+		variables.put("until", new UntilOperator());
+		variables.put("step", new StepOperator());
+		variables.put("lambda", new LambdaOperator());
+		variables.put("print", new PrintOperator());
 	}
 	
 	public Engine(Engine _super){
 		this._super = _super;
-		this.operators = _super.operators;
 	}
 	
 	public Object eval(Object script){
@@ -87,7 +83,7 @@ public class Engine {
 			}else if (engine._super != null){
 				engine = engine._super;
 			}else{
-				new RuntimeException("Unknown variable:" + name);
+				throw new RuntimeException("Unknown variable:" + name);
 			}
 		}
 	}

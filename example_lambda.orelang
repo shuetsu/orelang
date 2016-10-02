@@ -2,4 +2,4 @@
   (set square_a
     (lambda (* (get a) (get a))))
   (set a 5)
-  (print ((get square_a))))
+  (print (square_a)))

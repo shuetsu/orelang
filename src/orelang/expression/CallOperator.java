@@ -23,9 +23,8 @@ public class CallOperator implements IExpression {
 	private IOperator getOperator(Engine engine, Object op){
 		if (op instanceof IOperator){
 			return (IOperator)op;
-		}else if (engine.operators.containsKey(op)){
-			return engine.operators.get(op);
+		}else{
+			return (IOperator)engine.getVariable((String)op);
 		}
-		throw new RuntimeException("Unknown operator: " + op.toString());
 	}
 }
