@@ -1,9 +1,9 @@
 (step
   (def counter
-    ((lambda
+    ((lambda ()
        (step
          (def c 0)
-         (lambda (set c (+ c 1)))))))
+         (lambda () (set c (+ c 1)))))))
   (print (counter))
   (print (counter))
   (print (counter))

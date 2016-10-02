@@ -1,6 +1,6 @@
 (step
   (def v 1)
-  ((lambda
+  ((lambda ()
      (step
        (def v 2)
        (print v))))

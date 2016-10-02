@@ -3,15 +3,15 @@
  (def PI 3.14159)
  
  (def create_circle 
-   (lambda radius (step
+   (lambda (radius) (step
      (def get_radius 
-       (lambda radius))
+       (lambda () radius))
      (def set_radius
-       (lambda r (set radius r)))
+       (lambda (r) (set radius r)))
      (def circumference
-       (lambda (* 2 PI radius)))
+       (lambda () (* 2 PI radius)))
      (def area
-       (lambda (* PI radius radius)))
+       (lambda () (* PI radius radius)))
      get)))
  
  (def c (create_circle 5))
