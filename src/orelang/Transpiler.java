@@ -22,7 +22,7 @@ public class Transpiler {
 	}
 
 	public static Object transpile(String script){
-		String s = script;
+		String s = script.trim();
 		s = s.replaceAll("\\(\\s*", "["); // ( -> [
 		s = s.replaceAll("\\s*\\)", "]"); // ( -> ]
 		s = s.replaceAll(";.*", ""); // remove comments
