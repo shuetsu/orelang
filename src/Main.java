@@ -7,6 +7,7 @@ import orelang.Transpiler;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
+		
 		{
 			System.out.println("example: (+ 1 2 (* 3 4))");
 			Engine engine = new Engine();
@@ -19,9 +20,9 @@ public class Main {
 			engine.eval(Transpiler.transpile(new FileReader("example_sum.orelang")));
 		}
 		{
-			System.out.println("example: オペレータの動的ディスパッチ");
+			System.out.println("example: 第１級オブジェクトとしてのオペレータ");
 			Engine engine = new Engine();
-			engine.eval(Transpiler.transpile(new FileReader("example_dynamic_op.orelang")));
+			engine.eval(Transpiler.transpile(new FileReader("example_firstclass_op.orelang")));
 		}
 		{
 			System.out.println("example: 手続きの定義(lambdaオペレータ)");
