@@ -2,4 +2,4 @@
   (set square_a
     (lambda () (* a a)))
   (set a 5)
-  (print (square_a)))
+  (print (square_a))) ; 25

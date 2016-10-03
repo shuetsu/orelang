@@ -1,4 +1,3 @@
 (step
   (set add +)
-  ; aaabbb
-  (print (add 1 2 3))) ; => 6
+  (print (add 1 2 3))) ; 6

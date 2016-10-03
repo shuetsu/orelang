@@ -4,8 +4,8 @@
        (step
          (def c 0)
          (lambda () (set c (+ c 1)))))))
-  (print (counter))
-  (print (counter))
-  (print (counter))
-  (print (counter))
-  (print (counter)))
+  (print (counter))  ; 1
+  (print (counter))  ; 2
+  (print (counter))  ; 3
+  (print (counter))  ; 4
+  (print (counter))) ; 5

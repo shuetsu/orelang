@@ -5,4 +5,4 @@
     (step
       (set sum (+ sum i))
       (set i (+ i -1))))
-  (print sum))
+  (print sum)) ; 55
