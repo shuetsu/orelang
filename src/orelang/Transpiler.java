@@ -16,20 +16,22 @@ public class Transpiler {
 	    BufferedReader br = new BufferedReader(reader);
 	    String l;
 	    while ((l = br.readLine()) != null){
-	        builder.append(l);
+	        builder.append(l).append("\n");
 	    }
 	    return transpile(builder.toString());
 	}
 
 	public static Object transpile(String script){
-		String s = script.trim();
-		s = s.replaceAll("\\(\\s*", "["); // ( -> [
-		s = s.replaceAll("\\s*\\)", "]"); // ( -> ]
-		s = s.replaceAll(";.*", ""); // remove comments
-		s = s.replaceAll("\n", ""); // remove line return
-		s = s.replaceAll("\\s+", ", "); // spaces -> ,
-		s = s.replaceAll("[+*=](?=[, \\]])", "\"$0\""); // escape symbols
-		s = s.replaceAll("[a-zA-Z_][a-zA-Z0-9_]*", "\"$0\""); // escape symbols
+		String s = script;
+		s = s.replaceAll(";.*", "");
+		s = s.replaceAll("\\(\\s*", "[");
+		s = s.replaceAll("\\s*\\)", "]");
+		s = s.replaceAll("\n", "");
+		s = s.replaceAll("^\\s+", "");
+		s = s.replaceAll("\\s+$", "");
+		s = s.replaceAll("\\s+", ", ");
+		s = s.replaceAll("[+*=](?=[, \\]])", "\"$0\"");
+		s = s.replaceAll("[a-zA-Z_][a-zA-Z0-9_]*", "\"$0\"");
 		return JSON.decode(s);
 	}
 
